@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="425" pageHeight="283" orientation="Landscape" columnWidth="397" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" uuid="557dcafc-8496-4467-a778-a311d0ecc398">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL SERVER"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="OC" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechaOC" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="QtyEt" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pagAct" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+		    [01_No_Lote] AS NO_Lote, 
+		    [02_Fecha] AS Fecha,
+		    [03_ItemID] AS ItemID,
+		    [04_NombreItem] AS NombreItem, 
+		    [05_OC] AS OC, 
+		    [06_LotProv] AS LotProv, 
+		    [07_ID_Prov] AS ID_Prov, 
+		    [08_Cantidad] AS Cantidad, 
+		    [09_UM] AS UM, 
+		    [10_Name_Prov] AS Nombre_Prov
+		FROM PCS_DES_LOTESPO
+		WHERE ([05_OC] = $P{OC}) AND ([02_Fecha] = $P{fechaOC})]]>
+	</queryString>
+	<field name="NO_Lote" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NO_Lote"/>
+		<property name="com.jaspersoft.studio.field.label" value="NO_Lote"/>
+	</field>
+	<field name="Fecha" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="Fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="Fecha"/>
+	</field>
+	<field name="ItemID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ItemID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ItemID"/>
+	</field>
+	<field name="NombreItem" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NombreItem"/>
+		<property name="com.jaspersoft.studio.field.label" value="NombreItem"/>
+	</field>
+	<field name="OC" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OC"/>
+		<property name="com.jaspersoft.studio.field.label" value="OC"/>
+	</field>
+	<field name="LotProv" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LotProv"/>
+		<property name="com.jaspersoft.studio.field.label" value="LotProv"/>
+	</field>
+	<field name="ID_Prov" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ID_Prov"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID_Prov"/>
+	</field>
+	<field name="Cantidad" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Cantidad"/>
+		<property name="com.jaspersoft.studio.field.label" value="Cantidad"/>
+	</field>
+	<field name="UM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="UM"/>
+		<property name="com.jaspersoft.studio.field.label" value="UM"/>
+	</field>
+	<field name="Nombre_Prov" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Nombre_Prov"/>
+		<property name="com.jaspersoft.studio.field.label" value="Nombre_Prov"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="73" splitType="Stretch">
+			<textField>
+				<reportElement x="107" y="53" width="103" height="20" uuid="e2d2dbca-fcc1-4b7e-8e3b-a96f89fbc072"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NO_Lote}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="55" y="53" width="52" height="20" uuid="8c0e66bf-16f5-4dc9-8b77-32827e54c641"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Lote:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="89" height="48" uuid="1f64d378-00b4-40e0-9300-1715e0179b81"/>
+				<imageExpression><![CDATA["C:\\ImpresionEtiquetasBopisa\\src\\Reportes\\Bopisa_icono.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="255" y="16" width="45" height="20" uuid="43c015b9-c223-4c62-8c05-4cc032b84220"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="300" y="16" width="70" height="20" uuid="5e347645-3c21-4d89-82f6-0571d669eb82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="336" y="53" width="60" height="20" uuid="f79a7a3a-b460-4a75-9e2b-8f7049aae1cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Cantidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="287" y="53" width="49" height="20" uuid="48f758e0-1bf5-422a-a0c0-ae7a70f6bbe7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Cantidad:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="117" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="44" height="20" uuid="32239ea8-63b3-4ca9-8b47-ea47513c0990"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Item ID:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="0" width="100" height="20" uuid="32a8953d-ee26-4185-86f3-b62217f7c539"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ItemID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="30" width="67" height="40" uuid="cd8a0c06-c4e7-46b1-806d-b8723386d59c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nombre del Item:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="74" y="30" width="283" height="40" uuid="34cb36f8-f261-429d-ab49-69cb7c451258"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NombreItem}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="336" y="0" width="60" height="20" uuid="d4992835-d706-454f-90c7-ca01dd82c8c2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{UM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="288" y="0" width="49" height="20" uuid="8934960f-3a04-47c8-b847-9b0d860afecc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[UM:]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="64" y="90" width="121" height="21" uuid="0c5489e7-84f9-4834-a687-1557464624b0"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{NO_Lote}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<componentElement>
+				<reportElement x="255" y="89" width="131" height="21" uuid="2050c7cd-1b2d-4ecc-8ede-6c316a9826e9"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{ItemID}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<staticText>
+				<reportElement x="197" y="90" width="44" height="20" uuid="4f522dd8-d1c7-47e0-81e6-0e0c5e660d7d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Item ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="91" width="52" height="20" uuid="def12577-2e2f-4dee-947e-a1845e54a97d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Lote:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="55" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="247" y="35" width="149" height="20" uuid="28bbe100-9d5e-4a94-915f-056e772d1fa0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{pagAct} + "/" + $P{QtyEt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="31" width="33" height="24" uuid="af1930ef-5e41-4108-934e-ab53015ab145"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[OC:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="33" y="31" width="84" height="24" uuid="6f48fd8e-29fe-44a3-8c68-e59e79a35944"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{OC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="277" y="0" width="119" height="35" uuid="5ce5eb8c-e24a-4d12-a457-2854fad789d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Nombre_Prov}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="102" height="24" uuid="e7697298-c3ae-4eed-87e9-98df159a1279"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Lote de Proveedor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="0" width="92" height="35" uuid="0aa10865-a9f2-4ded-b53a-8e6101a80db0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nombre del proveedor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="102" y="0" width="84" height="24" uuid="bcf37845-efb2-418c-a64b-36e15140646a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{LotProv}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

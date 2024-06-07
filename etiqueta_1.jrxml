@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.20.6  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="131" pageHeight="202" columnWidth="131" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="557dcafc-8496-4467-a778-a311d0ecc398">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL SERVER"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="OC" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechaOC" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+		    [01_No_Lote] AS NO_Lote, 
+		    [02_Fecha] AS Fecha,
+		    [03_ItemID] AS ItemID,
+		    [04_NombreItem] AS NombreItem, 
+		    [05_OC] AS OC, 
+		    [06_LotProv] AS LotProv, 
+		    [07_ID_Prov] AS ID_Prov, 
+		    [08_Cantidad] AS Cantidad, 
+		    [09_UM] AS UM, 
+		    [10_Name_Prov] AS Nombre_Prov
+		FROM PCS_DES_LOTESPO
+		WHERE ([05_OC] = $P{OC}) AND ([02_Fecha] = $P{fechaOC})]]>
+	</queryString>
+	<field name="NO_Lote" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NO_Lote"/>
+		<property name="com.jaspersoft.studio.field.label" value="NO_Lote"/>
+	</field>
+	<field name="Fecha" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="Fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="Fecha"/>
+	</field>
+	<field name="ItemID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ItemID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ItemID"/>
+	</field>
+	<field name="NombreItem" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NombreItem"/>
+		<property name="com.jaspersoft.studio.field.label" value="NombreItem"/>
+	</field>
+	<field name="OC" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OC"/>
+		<property name="com.jaspersoft.studio.field.label" value="OC"/>
+	</field>
+	<field name="LotProv" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LotProv"/>
+		<property name="com.jaspersoft.studio.field.label" value="LotProv"/>
+	</field>
+	<field name="ID_Prov" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ID_Prov"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID_Prov"/>
+	</field>
+	<field name="Cantidad" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Cantidad"/>
+		<property name="com.jaspersoft.studio.field.label" value="Cantidad"/>
+	</field>
+	<field name="UM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="UM"/>
+		<property name="com.jaspersoft.studio.field.label" value="UM"/>
+	</field>
+	<field name="Nombre_Prov" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Nombre_Prov"/>
+		<property name="com.jaspersoft.studio.field.label" value="Nombre_Prov"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="73" splitType="Stretch">
+			<textField>
+				<reportElement x="19" y="0" width="90" height="20" uuid="e2d2dbca-fcc1-4b7e-8e3b-a96f89fbc072"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NO_Lote}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="36" y="20" width="57" height="20" uuid="5e347645-3c21-4d89-82f6-0571d669eb82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="40" width="47" height="20" uuid="f79a7a3a-b460-4a75-9e2b-8f7049aae1cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Cantidad}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="73" y="40" width="38" height="20" uuid="d4992835-d706-454f-90c7-ca01dd82c8c2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{UM}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="117" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="22" width="95" height="40" uuid="34cb36f8-f261-429d-ab49-69cb7c451258"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NombreItem}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="20" y="70" width="87" height="20" uuid="0c5489e7-84f9-4834-a687-1557464624b0"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{NO_Lote}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<componentElement>
+				<reportElement x="20" y="90" width="87" height="18" uuid="2050c7cd-1b2d-4ecc-8ede-6c316a9826e9"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{ItemID}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<textField>
+				<reportElement x="20" y="0" width="87" height="22" uuid="32a8953d-ee26-4185-86f3-b62217f7c539"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{ItemID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="24" width="20" height="24" uuid="af1930ef-5e41-4108-934e-ab53015ab145"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[OC:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="58" y="24" width="67" height="24" uuid="6f48fd8e-29fe-44a3-8c68-e59e79a35944"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{OC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="0" width="38" height="24" uuid="5ce5eb8c-e24a-4d12-a457-2854fad789d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ID_Prov}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="0" width="44" height="24" uuid="bcf37845-efb2-418c-a64b-36e15140646a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{LotProv}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
